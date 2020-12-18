@@ -2,11 +2,13 @@ import React from 'react';
 import { View, Text, Stylesheet, Button } from 'react-native';
 import Chat from './Chat';
 
-const Main = () => {
+const Main = props => {
   return (
     <View>
       <Text>This is the Main Screen</Text>
-      <Button title="Go to Chat Screen"/>
+      <Button title="Go to Chat Screen" onPress={() => 
+      {props.navigation.navigate('Chat')}}
+      />
     </View>
   )
 }
