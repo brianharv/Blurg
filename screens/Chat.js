@@ -1,35 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import ChatInput from '../components/ChatInput';
-
-const DismissKeyboard = ({ children }) => {
-  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-    {children}
-  </TouchableWithoutFeedback>
-};
+import { View, Text, StyleSheet, Button } from 'react-native';
+import KeyboardAvoid from '../components/KeyboardAvoid';
 
 
 const Chat = props => {
-
   return (
-    <DismissKeyboard>
-      <View style={styles.screen}>
+    <View style={styles.screen}>
         <Text>This is the Chat Screen</Text>
         <Button title="Back to Messages" onPress={() => {
           props.navigation.navigate('Messages')
         }}/>
-        <ChatInput />
-      </View>
-    </DismissKeyboard>
+      <KeyboardAvoid />
+    </View>
+    
   )
 }
 
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-}
+  }
 });
 
 export default Chat;
