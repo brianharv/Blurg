@@ -3,12 +3,12 @@ import { View, Text, Stylesheet } from 'react-native';
 
 const Login = () => {
   return (
-    <View style={}>
+    <View>
       <Text>This is the Login Screen</Text>
     </View>
   )
 }
 
-const styles = Stylesheet.create({});
+// const styles = Stylesheet.create({});
 
 export default Login;

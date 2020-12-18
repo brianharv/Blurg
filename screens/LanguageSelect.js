@@ -3,12 +3,12 @@ import { View, Text, Stylesheet } from 'react-native';
 
 const LanguageSelect = () => {
   return (
-    <View style={}>
+    <View>
       <Text>This is the Language Select Screen</Text>
     </View>
   )
 }
 
-const styles = Stylesheet.create({});
+// const styles = Stylesheet.create({});
 
 export default LanguageSelect;
