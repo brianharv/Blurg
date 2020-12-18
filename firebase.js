@@ -2,7 +2,7 @@ import firebase from 'firebase';
 
 class FirebaseSDK {
   constructor() {
-    if (!firebase.app.length) {
+    if (!firebase.apps.length) {
       firebase.initializeApp({
         apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
         authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -20,8 +20,6 @@ class FirebaseSDK {
       .then(success_callback, failed_callback);
   };
 }
-
 const firebaseSDK = new FirebaseSDK();
-
 export default firebaseSDK;
 

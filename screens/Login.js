@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
 import firebaseSDK from 'firebase';
+require('firebase/auth');
 
 export default class Login extends React.Component {
 	static navigationOptions = {
@@ -8,9 +9,9 @@ export default class Login extends React.Component {
 	};
 
 	state = {
-		name: 'Your Name',
-		email: 'test@test.com',
-		password: 'password',
+		name: 'Brian Harvey',
+		email: 'admin@admin.com',
+		password: '123456',
 		avatar: ''
 	};
 
@@ -47,43 +48,47 @@ export default class Login extends React.Component {
 
 	render() {
 		return (
-			<View>
+			<View styles={styles.container}>
 				<Text style={styles.title}>Email:</Text>
 				<TextInput
 					style={styles.nameInput}
-					placeHolder="test3@gmail.com"
+					placeHolder="email"
 					onChangeText={this.onChangeTextEmail}
 					value={this.state.email}
 				/>
 				<Text style={styles.title}>Password:</Text>
 				<TextInput
-					style={styles.nameInput}
+          style={styles.nameInput}
 					onChangeText={this.onChangeTextPassword}
 					value={this.state.password}
 				/>
-				<Button
-					title="Login"
-					style={styles.buttonText}
-					onPress={this.onPressLogin}
-				/>
-
-				<Button
-					title="Signup"
-					style={styles.buttonText}
-					onPress={() => this.props.navigation.navigate('Signup')}
-				/>
-
-        <Button title="Start Talking" onPress={() => 
-        {props.navigation.navigate('Messages')}}
+        <Button
+          title="Login"
+          style={styles.buttonText}
+          onPress={this.onPressLogin}
         />
 
+        <Button
+          title="Signup"
+          style={styles.buttonText}
+          onPress={() => this.props.navigation.navigate('Signup')}
+        />
 
+        <Button 
+        title="Start Talking" 
+        style={styles.buttonText}
+        onPress={() => 
+        {props.navigation.navigate('Messages')}}
+        />
 			</View>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
 	title: {
 		marginTop: 16,
 		marginLeft: 16,
@@ -100,5 +105,5 @@ const styles = StyleSheet.create({
 	buttonText: {
 		marginLeft: 16,
 		fontSize: 42
-	}
+  }
 });
