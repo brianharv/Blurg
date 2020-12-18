@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Stylesheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 const Users = () => {
   return (
@@ -9,6 +9,12 @@ const Users = () => {
   )
 }
 
-// const styles = Stylesheet.create({});
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+}
+});
 
 export default Users;

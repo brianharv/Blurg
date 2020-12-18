@@ -1,14 +1,20 @@
 import React from 'react';
-import { View, Text, Stylesheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-const Chat = () => {
+const Chat = props => {
   return (
-    <View>
+    <View style={styles.screen}>
       <Text>This is the Chat Screen</Text>
     </View>
   )
 }
 
-// const styles = Stylesheet.create({});
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+}
+});
 
 export default Chat;

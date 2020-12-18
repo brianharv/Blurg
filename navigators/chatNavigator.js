@@ -3,6 +3,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import Main from '../screens/Main';
 import Chat from '../screens/Chat';
+import Colors from '../constants/Colors';
 
 const defaultStackNavOptions = {
   headerStyle: {
