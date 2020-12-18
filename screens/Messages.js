@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
-const Login = props => {
+const Messages = props => {
   return (
     <View style={styles.screen}>
-      <Text>This is the Login Screen</Text>
-      <Button title="View Messages" onPress={() => {
-        props.navigation.navigate('Messages')
+      <Text>Messages</Text>
+      <Button title="New Message" onPress={() => {
+        props.navigation.navigate('Users')
       }}
       />
     </View>
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
 }
 });
 
-export default Login;
+export default Messages;

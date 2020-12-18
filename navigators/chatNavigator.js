@@ -3,7 +3,10 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import Main from '../screens/Main';
 import Chat from '../screens/Chat';
+import SelectUsers from '../screens/SelectUsers';
+import Login from "../screens/Login";
 import Colors from '../constants/Colors';
+import Messages from '../screens/Messages';
 
 const defaultStackNavOptions = {
   headerStyle: {
@@ -13,11 +16,16 @@ const defaultStackNavOptions = {
 }
 
 const ChatNavigator = createStackNavigator({
-  Main: {screen: Main},
-  Chat: {screen: Chat}
+  Main: Main,
+  Users: SelectUsers,
+  Login: Login,
+  Messages: Messages,
+  Chat: Chat
 }, {
   defaultNavigationOptions: defaultStackNavOptions
 });
+
+
 
 
 export default createAppContainer(ChatNavigator);
