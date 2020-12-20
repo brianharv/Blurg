@@ -9,16 +9,20 @@ const Chat = () => {
     setMessages([
       {
         _id: 1,
-        text: 'Hello developer',
+        text: 'Hey dude',
         createdAt: new Date(),
         user: {
           _id: 2,
-          name: 'React Native',
+          name: 'Randy',
           avatar: 'https://placeimg.com/140/140/any',
         },
       },
     ])
   }, [])
+
+  // const onSend = useCallback((messages = []) => {
+  //   setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
+  // }, [])
 
   const onSend = useCallback((messages = []) => {
     setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
