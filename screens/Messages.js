@@ -6,7 +6,7 @@ const Messages = props => {
     <View style={styles.screen}>
       <Text>Messages</Text>
       <Button title="New Message" onPress={() => {
-        props.navigation.navigate('Users')
+        props.navigation.navigate('Name')
       }}
       />
     </View>

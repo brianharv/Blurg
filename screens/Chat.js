@@ -3,6 +3,7 @@ import { GiftedChat } from 'react-native-gifted-chat';
 
 
 const Chat = () => {
+
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -38,6 +39,15 @@ const Chat = () => {
     />
   )
 }
+
+Chat.navigationOptions = navigationData => {
+  const userName = navigationData.navigation.getParams('name');
+  const selLang = navigationData.navigation.getParams('language');
+  console.log(userName);
+  return {
+    headerTitle: userName
+  };
+};
 
 export default Chat;
 
