@@ -11,6 +11,10 @@ const NameAndLanguage = props => {
     setEnteredName(enteredName)
   }
 
+  const onStartChattingPress = () => {
+    nameInputHandler(enteredName)
+  }
+
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Enter Your Name</Text>
@@ -18,7 +22,6 @@ const NameAndLanguage = props => {
         <TextInput 
           placeholder="enter your name"
           style={styles.textInput}
-          value={nameInputHandler}
         />
       </View>
       <View>
@@ -37,10 +40,9 @@ const NameAndLanguage = props => {
 
       <View> 
         <Button style={styles.button} title="Start Chatting" onPress={() => {
-        props.navigation.navigate('Chat', {
-          name: enteredName,
-          language: selectedValue
-        })}}
+        props.navigation.navigate('Chat'), {
+          name: enteredName
+        }}}
         />
       </View>
     </View>

@@ -40,14 +40,14 @@ const Chat = () => {
   )
 }
 
-Chat.navigationOptions = navigationData => {
-  const userName = navigationData.navigation.getParams('name');
-  const selLang = navigationData.navigation.getParams('language');
-  console.log(userName);
-  return {
-    headerTitle: userName
-  };
-};
+// Chat.navigationOptions = navigationData => {
+//   const userName = navigationData.navigation.getParams('name');
+//   const selLang = navigationData.navigation.getParams('language');
+//   console.log(userName);
+//   return {
+//     headerTitle: userName
+//   };
+// };
 
 export default Chat;
 
