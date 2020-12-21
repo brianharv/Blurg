@@ -5,6 +5,9 @@ import { GiftedChat } from 'react-native-gifted-chat';
 const Chat = props => {
  
   const userName = props.navigation.getParam('name');
+  const selLang = props.navigation.getParam('language');
+
+  console.log(userName, selLang)
 
   const [messages, setMessages] = useState([]); 
 
@@ -43,8 +46,6 @@ const Chat = props => {
 Chat.navigationOptions = navigationData => {
   const userName = navigationData.navigation.getParam('name');
   const selLang = navigationData.navigation.getParam('language');
-  console.log(userName);
-  console.log(selLang);
 
   return {
     headerTitle: userName

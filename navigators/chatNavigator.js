@@ -5,7 +5,6 @@ import Main from '../screens/Main';
 import Chat from '../screens/Chat';
 import Login from "../screens/Login";
 import Colors from '../constants/Colors';
-import Messages from '../screens/Messages';
 import NameAndLanguage from '../screens/NameAndLanguage';
 
 const defaultStackNavOptions = {
@@ -20,7 +19,6 @@ const ChatNavigator = createStackNavigator({
   Name: NameAndLanguage,
   Chat: Chat,
   Login: Login,
-  Messages: Messages,
 }, {
   defaultNavigationOptions: defaultStackNavOptions
 });

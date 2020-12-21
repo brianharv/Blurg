@@ -27,9 +27,7 @@ const NameAndLanguage = props => {
           defaultValue={enteredName}
         />
       </View>
-      <View style={styles.text}>
-          <Text>Select the language you would like your text to be translated to.</Text>  
-      </View>  
+      <Text style={styles.text}>Select the language you would like your text to be translated to.</Text>  
       <Picker
         style={styles.pickerContainer}
         selectedValue={selectedValue}
@@ -49,7 +47,7 @@ const NameAndLanguage = props => {
           });
         }}
         >
-        <Text>Start Blerging</Text>
+        <Text style={styles.text}>Start Blerging</Text>
       </TouchableOpacity> 
 
     </View>
@@ -66,26 +64,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    width: '50%',
-    marginTop: offset,
-    marginLeft: offset,
-    fontSize: offset,
+    width: '75%',
+    marginTop: 50,
+    fontFamily: 'Bungee_400Regular',
+    fontSize: 30,
+    alignSelf: 'center',
     justifyContent: 'center'
   },
   text: {
     width: '60%',
-    justifyContent: 'center',
-    textAlign: 'justify',
-    fontSize: offset,
-    marginTop: 50
+    fontFamily: 'Bungee_400Regular',
+    fontSize: 20,
+    marginTop: 50,
+    marginBottom: 25
     
   },
   textInput:{
     flexDirection: 'row',
-    width: '90%',
+    width: 250,
     borderColor: 'black',
     borderWidth: 1,
-    padding: 8,
+    padding: 10,
+    borderRadius: 10,
     marginTop: 30,
     marginBottom: 30
   },
@@ -95,9 +95,12 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#168ec9",
+    borderColor: '#ccc',
+    borderWidth: 1,
     borderRadius: 10,
-    padding: 20,
-    marginTop: 300
+    marginTop: 300,
+    alignItems: 'center',
+    padding: 5
   }
 });
 

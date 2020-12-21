@@ -7,7 +7,7 @@ const Login = props => {
       <Text>This is the Login Screen</Text>
       <View style={styles.button}>
         <Button title="Start Talking" onPress={() => 
-        {props.navigation.navigate('Messages')}}
+        {props.navigation.navigate('Name')}}
         />
       </View>
       <View style={styles.button}>
