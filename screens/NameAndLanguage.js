@@ -28,12 +28,11 @@ const NameAndLanguage = props => {
         />
       </View>
       <View style={styles.text}>
-          <Text>Select the language you would like your text to be translated to. {console.log(enteredName)}</Text>  
+          <Text>Select the language you would like your text to be translated to.</Text>  
       </View>  
       <Picker
         style={styles.pickerContainer}
         selectedValue={selectedValue}
-        style={{ height: 50, width: 150 }}
         onValueChange={handleLanguageChoice}
       >
         <Picker.Item label="Spanish" value="es" />
@@ -65,7 +64,6 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     alignItems: 'center',
-    // justifyContent: 'space-evenly'
   },
   title: {
     width: '50%',
@@ -77,7 +75,9 @@ const styles = StyleSheet.create({
   text: {
     width: '60%',
     justifyContent: 'center',
-    textAlign: 'justify'
+    textAlign: 'justify',
+    fontSize: offset,
+    marginTop: 50
     
   },
   textInput:{
@@ -89,12 +89,15 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 30
   },
+  pickerContainer: {
+    height: 20,
+    width: 250
+  },
   button: {
-    alignItems: "center",
     backgroundColor: "#168ec9",
     borderRadius: 10,
     padding: 20,
-    justifyContent: 'flex-end'
+    marginTop: 300
   }
 });
 
