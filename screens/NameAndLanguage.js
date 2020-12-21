@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+
 
 const NameAndLanguage = props => {
 
@@ -26,34 +27,32 @@ const NameAndLanguage = props => {
           defaultValue={enteredName}
         />
       </View>
-      <View>
+      <View style={styles.text}>
           <Text>Select the language you would like your text to be translated to. {console.log(enteredName)}</Text>  
       </View>  
-      <View style={styles.pickerContainer}>
-        <Picker
-          selectedValue={selectedValue}
-          style={{ height: 50, width: 150 }}
-          onValueChange={handleLanguageChoice}
+      <Picker
+        style={styles.pickerContainer}
+        selectedValue={selectedValue}
+        style={{ height: 50, width: 150 }}
+        onValueChange={handleLanguageChoice}
+      >
+        <Picker.Item label="Spanish" value="es" />
+        <Picker.Item label="Italian" value="it" />
+        <Picker.Item label="German" value="de" />
+        <Picker.Item label="French" value="fr" />
+      </Picker>
+      <TouchableOpacity
+        style={styles.button} 
+        onPress={() => {
+        props.navigation.navigate('Chat', {
+          name: enteredName,
+          language: selectedValue
+          });
+        }}
         >
-          <Picker.Item label="Spanish" value="es" />
-          <Picker.Item label="Italian" value="it" />
-          <Picker.Item label="German" value="de" />
-          <Picker.Item label="French" value="fr" />
-        </Picker>
-      </View>
+        <Text>Start Blerging</Text>
+      </TouchableOpacity> 
 
-      <View> 
-        <Button 
-          style={styles.button} 
-          title="Start Chatting" 
-          onPress={() => {
-          props.navigation.navigate('Chat', {
-            name: enteredName,
-            language: selectedValue
-            });
-          }}
-        />
-      </View>
     </View>
 
   );
@@ -66,7 +65,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-evenly'
+    // justifyContent: 'space-evenly'
   },
   title: {
     width: '50%',
@@ -75,18 +74,27 @@ const styles = StyleSheet.create({
     fontSize: offset,
     justifyContent: 'center'
   },
+  text: {
+    width: '60%',
+    justifyContent: 'center',
+    textAlign: 'justify'
+    
+  },
   textInput:{
+    flexDirection: 'row',
     width: '90%',
     borderColor: 'black',
     borderWidth: 1,
     padding: 8,
-  },
-  pickerContainer: {
-    marginTop: 10,
+    marginTop: 30,
+    marginBottom: 30
   },
   button: {
-    marginBottom: 10,
-    alignItems: 'flex-end'
+    alignItems: "center",
+    backgroundColor: "#168ec9",
+    borderRadius: 10,
+    padding: 20,
+    justifyContent: 'flex-end'
   }
 });
 
