@@ -2,9 +2,12 @@ import React, {useState, useCallback, useEffect } from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
 
 
-const Chat = () => {
+const Chat = props => {
+ 
+  const userName = props.navigation.getParam('name');
 
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([]); 
+
 
   useEffect(() => {
     setMessages([
@@ -21,9 +24,6 @@ const Chat = () => {
     ])
   }, [])
 
-  // const onSend = useCallback((messages = []) => {
-  //   setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
-  // }, [])
 
   const onSend = useCallback((messages = []) => {
     setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
@@ -42,8 +42,10 @@ const Chat = () => {
 
 Chat.navigationOptions = navigationData => {
   const userName = navigationData.navigation.getParam('name');
-  // const selLang = navigationData.navigation.getParam('language');
+  const selLang = navigationData.navigation.getParam('language');
   console.log(userName);
+  console.log(selLang);
+
   return {
     headerTitle: userName
   };

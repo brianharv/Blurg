@@ -7,13 +7,13 @@ const NameAndLanguage = props => {
   const [enteredName, setEnteredName] = useState('');
   const [selectedValue, setSelectedValue] = useState('es');
 
-  // const nameInputHandler = enteredName => {
-  //   setEnteredName(enteredName)
-  // }
+  const nameInputHandler = enteredName => {
+    setEnteredName(enteredName)
+  }
 
-  // const onStartChattingPress = () => {
-  //   nameInputHandler(enteredName)
-  // }
+  const handleLanguageChoice = (inputValue) => {
+    setSelectedValue(inputValue);
+  };
 
   return (
     <View style={styles.screen}>
@@ -22,7 +22,7 @@ const NameAndLanguage = props => {
         <TextInput 
           placeholder="enter your name"
           style={styles.textInput}
-          onChangeText={enteredName => setEnteredName(enteredName)}
+          onChangeText={nameInputHandler}
           defaultValue={enteredName}
         />
       </View>
@@ -33,19 +33,25 @@ const NameAndLanguage = props => {
         <Picker
           selectedValue={selectedValue}
           style={{ height: 50, width: 150 }}
-          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+          onValueChange={handleLanguageChoice}
         >
           <Picker.Item label="Spanish" value="es" />
           <Picker.Item label="Italian" value="it" />
+          <Picker.Item label="German" value="de" />
+          <Picker.Item label="French" value="fr" />
         </Picker>
       </View>
 
       <View> 
-        <Button style={styles.button} title="Start Chatting" onPress={() => {
-        props.navigation.navigate('Chat'), {
-          name: enteredName,
-          language: selectedValue
-        }}} 
+        <Button 
+          style={styles.button} 
+          title="Start Chatting" 
+          onPress={() => {
+          props.navigation.navigate('Chat', {
+            name: enteredName,
+            language: selectedValue
+            });
+          }}
         />
       </View>
     </View>

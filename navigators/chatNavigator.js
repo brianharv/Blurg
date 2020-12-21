@@ -18,9 +18,9 @@ const defaultStackNavOptions = {
 const ChatNavigator = createStackNavigator({
   Main: Main,
   Name: NameAndLanguage,
+  Chat: Chat,
   Login: Login,
   Messages: Messages,
-  Chat: Chat
 }, {
   defaultNavigationOptions: defaultStackNavOptions
 });
