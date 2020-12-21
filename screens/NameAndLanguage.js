@@ -23,10 +23,11 @@ const NameAndLanguage = props => {
           placeholder="enter your name"
           style={styles.textInput}
           onChangeText={enteredName => setEnteredName(enteredName)}
+          defaultValue={enteredName}
         />
       </View>
       <View>
-        <Text>Select the language you would like your text to be translated to.</Text>  
+          <Text>Select the language you would like your text to be translated to. {console.log(enteredName)}</Text>  
       </View>  
       <View style={styles.pickerContainer}>
         <Picker
@@ -44,7 +45,7 @@ const NameAndLanguage = props => {
         props.navigation.navigate('Chat'), {
           name: enteredName,
           language: selectedValue
-        }}}
+        }}} 
         />
       </View>
     </View>
