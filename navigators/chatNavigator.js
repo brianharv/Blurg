@@ -6,6 +6,7 @@ import Chat from '../screens/Chat';
 import Login from "../screens/Login";
 import Colors from '../constants/Colors';
 import NameAndLanguage from '../screens/NameAndLanguage';
+import Signup from '../screens/Signup';
 
 const defaultStackNavOptions = {
   headerStyle: {
@@ -19,6 +20,7 @@ const ChatNavigator = createStackNavigator({
   Name: NameAndLanguage,
   Chat: Chat,
   Login: Login,
+  Signup: Signup
 }, {
   defaultNavigationOptions: defaultStackNavOptions
 });

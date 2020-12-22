@@ -4,7 +4,7 @@ import firebaseSDK from '../firebase';
 
 export default class Login extends React.Component {
 	static navigationOptions = {
-		title: 'RN + Firebase Chat App'
+		title: 'Login'
 	};
 
 	state = {
