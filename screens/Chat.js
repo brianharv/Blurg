@@ -8,7 +8,8 @@ const Chat = props => {
   const userName = props.navigation.getParam('name');
   const selLang = props.navigation.getParam('language');
 
-  console.log(userName, selLang)
+
+
 
   const [messages, setMessages] = useState([]); 
 

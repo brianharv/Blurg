@@ -8,18 +8,18 @@ const Main = props => {
     <View style={styles.screen}>
       <Text style={styles.text}>Welcome to Blurg</Text>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button}>
-            <Button
-            color='black'
-            title="Start Talking" onPress={() => 
-            {props.navigation.navigate('Name')}}
-            />
-          </TouchableOpacity>
           <TouchableOpacity style={styles.button}> 
             <Button
             color='black'
             title="Login" onPress={() => 
             {props.navigation.navigate('Login')}}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button}>
+            <Button
+            color='black'
+            title="Start Talking" onPress={() => 
+            {props.navigation.navigate('Name')}}
             />
           </TouchableOpacity>
         </View>  

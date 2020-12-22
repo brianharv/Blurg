@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, StyleSheet, TextInput, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { Text, View, Button, StyleSheet, TextInput, ScrollView, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import firebaseSDK from '../firebase';
 
 export default class Login extends React.Component {
@@ -61,22 +61,30 @@ export default class Login extends React.Component {
 					onChangeText={this.onChangeTextPassword}
 					value={this.state.password}
 				/>
-				<Button
-					title="Login"
-					style={styles.buttonText}
-					onPress={this.onPressLogin}
-				/>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+          style={styles.button} 
+          onPress={() => {
+          props.navigation.navigate('Chat');
+          }}
+          >
+          <Text style={styles.text}>Login</Text>
+          </TouchableOpacity> 
 
-				<Button
-					title="Signup"
-					style={styles.buttonText}
-					onPress={() => this.props.navigation.navigate('Signup')}
-				/>
+          <TouchableOpacity
+            style={styles.button} 
+            onPress={() => {
+            props.navigation.navigate('Signup');
+            }}
+            >
+            <Text style={styles.text}>Signup</Text>
+          </TouchableOpacity> 
+        </View>
 			</View>
 		);
 	}
 }
-
+const offset = 16
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -85,20 +93,43 @@ const styles = StyleSheet.create({
 	title: {
     fontFamily: 'Bungee_400Regular',
     fontSize: 40,
-		marginTop: 16,
-		marginLeft: 16,
-		fontSize: 16
+		marginTop: offset,
+		marginLeft: offset,
+		fontSize: offset
 	},
 	nameInput: {
-		height: 16 * 2,
-		margin: 16,
-		paddingHorizontal: 16,
+		height: offset * 2,
+		margin: offset,
+    paddingHorizontal: offset,
+    borderRadius: 10,
 		borderColor: '#111111',
-		borderWidth: 1,
-		fontSize: 16
+    borderWidth: 2,
+    paddingVertical: 25,
+		fontSize: offset
 	},
 	buttonText: {
-		marginLeft: 16,
+		marginLeft: offset,
 		fontSize: 42
-	}
+  },
+  button: {
+    width: '40%',
+    padding: 20,
+    borderWidth: 2,
+    borderColor:'black',
+    borderRadius: 15,
+    margin: 10,
+    shadowOpacity: .25,
+    shadowOffset: {width: 2, height: 10},
+    shadowRadius: 10,
+    backgroundColor: "#168ec9"
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly'
+  },
+  text: {
+    fontFamily: 'Bungee_400Regular',
+    fontSize: 25,
+    textAlign: 'center'
+  }
 });

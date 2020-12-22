@@ -10,9 +10,12 @@ import Signup from '../screens/Signup';
 
 const defaultStackNavOptions = {
   headerStyle: {
-    backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : ''
+    backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : '#168ec9',
   },
-  headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor
+  headerTintColor: 'white',
+  headerTitleStyle: {
+    fontFamily: 'Bungee_400Regular',
+  }
 }
 
 const ChatNavigator = createStackNavigator({
