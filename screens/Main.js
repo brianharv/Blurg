@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
 
 
+
 const Main = props => {
   return (
     <View style={styles.screen}>
@@ -29,18 +30,18 @@ const Main = props => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor:'#a8f0e6'
+    backgroundColor: '#d3ebf5',
   },
   text: {
     marginTop: 50,
     padding: 25,
-    fontFamily: 'Quicksand_400SemiBold',
+    fontFamily: 'Bungee_400Regular',
     fontSize: 40,
-    color: 'white',
     alignSelf: 'center',
+    textAlign: 'center',
     shadowRadius: 5,
-    shadowOffset: {width: 1, height: 2},
-    shadowOpacity: .5
+    shadowOffset: {width: 2, height: 10},
+    shadowOpacity: .2
   },
   buttonContainer: {
     flex: 1,
@@ -51,12 +52,12 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     borderWidth: 2,
-    borderColor:'white',
+    borderColor:'black',
     borderRadius: 15,
     alignSelf: 'center',
     margin: 10,
     shadowOpacity: .25,
-    shadowOffset: {width:2, height: 1},
+    shadowOffset: {width: 2, height: 10},
     shadowRadius: 10,
     justifyContent: 'flex-end',
     backgroundColor: 'white'

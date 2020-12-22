@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import firebaseSDK from '../firebase';
 
 
 const NameAndLanguage = props => {
@@ -47,7 +48,7 @@ const NameAndLanguage = props => {
           });
         }}
         >
-        <Text style={styles.text}>Start Blerging</Text>
+        <Text style={styles.text}>Start Blurg</Text>
       </TouchableOpacity> 
 
     </View>
@@ -61,6 +62,7 @@ const offset = 24
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: '#d3ebf5',
     alignItems: 'center',
   },
   title: {
@@ -72,10 +74,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   text: {
-    width: '60%',
+    width: '72%',
     fontFamily: 'Bungee_400Regular',
     fontSize: 20,
-    marginTop: 50,
+    marginTop: 25,
     marginBottom: 25
     
   },
@@ -83,24 +85,24 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: 250,
     borderColor: 'black',
-    borderWidth: 1,
-    padding: 10,
+    borderWidth: 2,
+    padding: 12,
     borderRadius: 10,
     marginTop: 30,
     marginBottom: 30
   },
   pickerContainer: {
     height: 20,
-    width: 250
+    width: 250,
   },
   button: {
     backgroundColor: "#168ec9",
-    borderColor: '#ccc',
-    borderWidth: 1,
+    borderColor: 'black',
+    borderWidth: 2,
     borderRadius: 10,
     marginTop: 300,
     alignItems: 'center',
-    padding: 5
+    paddingHorizontal: 20
   }
 });
 

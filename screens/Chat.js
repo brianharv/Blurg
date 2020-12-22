@@ -1,5 +1,6 @@
 import React, {useState, useCallback, useEffect } from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
+import { StyleSheet } from 'react-native';
 
 
 const Chat = props => {
@@ -10,7 +11,6 @@ const Chat = props => {
   console.log(userName, selLang)
 
   const [messages, setMessages] = useState([]); 
-
 
   useEffect(() => {
     setMessages([
@@ -34,6 +34,7 @@ const Chat = props => {
 
   return (
     <GiftedChat
+      style={styles.screen}
       messages={messages}
       onSend={messages => onSend(messages)}
       user={{
@@ -48,9 +49,15 @@ Chat.navigationOptions = navigationData => {
   const selLang = navigationData.navigation.getParam('language');
 
   return {
-    headerTitle: userName
+    headerTitle: userName,
   };
 };
+
+const styles = StyleSheet.create({
+  screen: {
+    backgroundColor: '#d3ebf5',
+  },
+})
 
 export default Chat;
 

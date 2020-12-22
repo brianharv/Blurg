@@ -8,9 +8,9 @@ export default class Login extends React.Component {
 	};
 
 	state = {
-		name: 'Brian',
-		email: 'admin@admin.com',
-		password: '123456',
+		name: '',
+		email: '',
+		password: '',
 		avatar: ''
 	};
 
@@ -47,7 +47,7 @@ export default class Login extends React.Component {
 
 	render() {
 		return (
-			<View>
+			<View style={styles.screen}> 
 				<Text style={styles.title}>Email:</Text>
 				<TextInput
 					style={styles.nameInput}
@@ -78,6 +78,10 @@ export default class Login extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: '#d3ebf5',
+  },
 	title: {
 		marginTop: 16,
 		marginLeft: 16,

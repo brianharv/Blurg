@@ -13,9 +13,9 @@ import firebaseSDK from '../firebase';
 
 export default class Signup extends React.Component {
 	state = {
-		name: 'no name',
-		email: 'test@live.com',
-		password: '123456',
+		name: '',
+		email: '',
+		password: '',
 		avatar: ''
 	};
 
@@ -36,62 +36,13 @@ export default class Signup extends React.Component {
 	onChangeTextPassword = password => this.setState({ password });
 	onChangeTextName = name => this.setState({ name });
 
-	onImageUpload = async () => {
-		const { status: cameraRollPerm } = await Permissions.askAsync(
-			Permissions.CAMERA_ROLL
-		);
-		try {
-			// only if user allows permission to camera roll
-			if (cameraRollPerm === 'granted') {
-				let pickerResult = await ImagePicker.launchImageLibraryAsync({
-					allowsEditing: true,
-					aspect: [4, 3]
-				});
-				console.log(
-					'ready to upload... pickerResult json:' + JSON.stringify(pickerResult)
-				);
-
-				var wantedMaxSize = 150;
-				var rawheight = pickerResult.height;
-				var rawwidth = pickerResult.width;
-				var ratio = rawwidth / rawheight;
-				var wantedwidth = wantedMaxSize;
-				var wantedheight = wantedMaxSize / ratio;
-				// check vertical or horizontal
-				if (rawheight > rawwidth) {
-					wantedwidth = wantedMaxSize * ratio;
-					wantedheight = wantedMaxSize;
-				}
-				let resizedUri = await new Promise((resolve, reject) => {
-					ImageEditor.cropImage(
-						pickerResult.uri,
-						{
-							offset: { x: 0, y: 0 },
-							size: { width: pickerResult.width, height: pickerResult.height },
-							displaySize: { width: wantedwidth, height: wantedheight },
-							resizeMode: 'contain'
-						},
-						uri => resolve(uri),
-						() => reject()
-					);
-				});
-				let uploadUrl = await firebaseSDK.uploadImage(resizedUri);
-				this.setState({ avatar: uploadUrl });
-				await firebaseSDK.updateAvatar(uploadUrl);
-			}
-		} catch (err) {
-			console.log('onImageUpload error:' + err.message);
-			alert('Upload image error:' + err.message);
-		}
-	};
-
 	render() {
 		return (
 			<View>
 				<Text style={styles.title}>Email:</Text>
 				<TextInput
 					style={styles.nameInput}
-					placeHolder="test@live.com"
+					placeHolder="your email"
 					onChangeText={this.onChangeTextEmail}
 					value={this.state.email}
 				/>
@@ -112,11 +63,6 @@ export default class Signup extends React.Component {
 					style={styles.buttonText}
 					onPress={this.onPressCreate}
 				/>
-				<Button
-					title="Upload Avatar"
-					style={styles.buttonText}
-					onPress={this.onImageUpload}
-				/>
 			</View>
 		);
 	}
@@ -132,7 +78,8 @@ const styles = StyleSheet.create({
 	nameInput: {
 		height: offset * 2,
 		margin: offset,
-		paddingHorizontal: offset,
+    paddingHorizontal: offset,
+    borderRadius: 10,
 		borderColor: '#111111',
 		borderWidth: 1,
 		fontSize: offset
