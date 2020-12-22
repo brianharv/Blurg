@@ -2,7 +2,6 @@ import React,  { useState } from 'react';
 import ChatNavigator from './navigators/ChatNavigator';
 import AppLoading from 'expo-app-loading';
 import { useFonts, Bungee_400Regular } from '@expo-google-fonts/bungee';
-import * as Google from 'expo-google-app-auth';
 import { 
   Quicksand_300Light,
   Quicksand_400Regular,

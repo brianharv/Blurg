@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js add @xpo-google-fonts/changa
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js add @react-google-fonts/bungee
 
 PATH: 
   /Users/Brian/Library/Android/sdk/tools:/Users/Brian/Library/Android/sdk/tools/bin:/Users/Brian/Library/Android/sdk/platform-tools:/Users/Brian/.gem/ruby/2.6.5/bin:/Users/Brian/.rubies/ruby-2.6.5/lib/ruby/gems/2.6.0/bin:/Users/Brian/.rubies/ruby-2.6.5/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/Brian/Library/Android/sdk/tools:/Users/Brian/Library/Android/sdk/tools/bin:/Users/Brian/Library/Android/sdk/platform-tools:/Users/Brian/.npm-global/bin:/Users/Brian/.npm-global/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@xpo-google-fonts%2fchanga: Not found
+  Error: https://registry.yarnpkg.com/@react-google-fonts%2fbungee: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:66988:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:140749:22)
       at Request.emit (events.js:315:20)
@@ -38,17 +38,21 @@ npm manifest:
     },
     "dependencies": {
       "@expo-google-fonts/bungee": "^0.1.0",
+      "@expo-google-fonts/changa": "^0.1.0",
       "@expo-google-fonts/inter": "^0.1.0",
+      "@expo-google-fonts/quicksand": "^0.1.0",
       "@google-cloud/translate": "^6.0.5",
       "@react-native-community/masked-view": "0.1.10",
       "@react-native-firebase/app": "^10.3.0",
       "@react-native-picker/picker": "^1.9.7",
       "dotenv": "^8.2.0",
-      "expo": "~40.0.0",
+      "expo": "^40.0.0",
       "expo-app-loading": "^1.0.1",
       "expo-font": "~8.4.0",
+      "expo-google-app-auth": "^8.1.4",
       "expo-status-bar": "~1.0.3",
       "firebase": "^7.24.0",
+      "install": "^0.13.0",
       "react": "16.13.1",
       "react-dom": "16.13.1",
       "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
@@ -1124,10 +1128,20 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@expo-google-fonts/bungee/-/bungee-0.1.0.tgz#49ff15870285aa50ffb84a4660dfcac0969dec71"
     integrity sha512-lrZ6SoVZ0EOusdV5pWqJBQs7hoJKwvwoaZiO2KanWfuntZVFkhzbxJ4dVtSY6ZCd3QGCTUgKx6rrjCL327ZLlg==
   
+  "@expo-google-fonts/changa@^0.1.0":
+    version "0.1.0"
+    resolved "https://registry.yarnpkg.com/@expo-google-fonts/changa/-/changa-0.1.0.tgz#009e4b9d4c2feed10c9d038bb6e80a381788c1a6"
+    integrity sha512-t+epk4010P1Yx+0ql61FNuK2aMhQFLfSv3tMq3M5jEprbL5ltDmtaCqe8q43qBoyxGmUwRuPO3h9YXn4JufEnw==
+  
   "@expo-google-fonts/inter@^0.1.0":
     version "0.1.0"
     resolved "https://registry.yarnpkg.com/@expo-google-fonts/inter/-/inter-0.1.0.tgz#399f068437824fcbf6aa3da5fcf490dba2af85a3"
     integrity sha512-Y6GCqsUX6JwexQ2wmBkMiJBY6M2GpNQRTczzIGbBGhXWQxqGmP5awRcf0ZJV+OlLeJcKAzas/TW45ZLdpG3yzA==
+  
+  "@expo-google-fonts/quicksand@^0.1.0":
+    version "0.1.0"
+    resolved "https://registry.yarnpkg.com/@expo-google-fonts/quicksand/-/quicksand-0.1.0.tgz#bf97de249afe4e6663c9fecb84b3a09fbce7fd04"
+    integrity sha512-9HiiR4DGxCvdUYvr4MTQtH5g1y7Fp2njVTFSrBVSW9Sw5lwJ20HBE0+B5OFB/EzuFyXNsJiBN4f1GE5VbwPqXA==
   
   "@expo/babel-preset-cli@0.2.18":
     version "0.2.18"
@@ -3130,6 +3144,13 @@ Lockfile:
       snapdragon "^0.8.1"
       to-regex "^3.0.1"
   
+  expo-app-auth@~9.3.0:
+    version "9.3.0"
+    resolved "https://registry.yarnpkg.com/expo-app-auth/-/expo-app-auth-9.3.0.tgz#072bd3faa8a34ff50f700627bd4eb8480629b915"
+    integrity sha512-f8OdQDNmC5vSdBWzwtic5pq+bmtSCYGU1KeVhKV3W8VgGIgVx40Q72q3M+SMs68bz4RCuC1g7LOGTOBWzXIuNw==
+    dependencies:
+      invariant "^2.2.4"
+  
   expo-app-loading@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/expo-app-loading/-/expo-app-loading-1.0.1.tgz#a2ef73235c5dd0a99c0319ad9d3f4d278237564c"
@@ -3183,6 +3204,13 @@ Lockfile:
     dependencies:
       fbjs "1.0.0"
       fontfaceobserver "^2.1.0"
+  
+  expo-google-app-auth@^8.1.4:
+    version "8.1.4"
+    resolved "https://registry.yarnpkg.com/expo-google-app-auth/-/expo-google-app-auth-8.1.4.tgz#e87a548ee5e32c5951803781efcadf55eab7ad0d"
+    integrity sha512-2hXZCXEo7Dg3SDcc73MDniL+tJdwUzeBxTvXTGpnTKNF3JakuehLnx9ALuuEU86MKvM49/a3FiflhfEiWZ5qDw==
+    dependencies:
+      expo-app-auth "~9.3.0"
   
   expo-keep-awake@~8.4.0:
     version "8.4.0"
@@ -3238,7 +3266,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.0.3.tgz#62b4d6145680abd43ba6ecfa465f835e88bf6263"
     integrity sha512-/Orgla1nkIrfswNHbuAOTbPVq0g3+GrhoQVk7MRafY2dwrFLgXhaPExS+eN2hpmzqPv2LG5cqAZDCQUAjmZYBQ==
   
-  expo@~40.0.0:
+  expo@^40.0.0:
     version "40.0.0"
     resolved "https://registry.yarnpkg.com/expo/-/expo-40.0.0.tgz#6caf03587532cd18b482991332a8b75eeca2fcb7"
     integrity sha512-LT6Ae/Ms0qtRyJlJsj/FMB5AQpj6nED39SY9KqY4zK/uFG+R7DJ/4VUzkPued1mWtRUrtaqR+t88pA3p0vAWcg==
@@ -3941,6 +3969,11 @@ Lockfile:
       string-width "^2.1.0"
       strip-ansi "^4.0.0"
       through "^2.3.6"
+  
+  install@^0.13.0:
+    version "0.13.0"
+    resolved "https://registry.yarnpkg.com/install/-/install-0.13.0.tgz#6af6e9da9dd0987de2ab420f78e60d9c17260776"
+    integrity sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==
   
   invariant@^2.2.2, invariant@^2.2.4:
     version "2.2.4"
