@@ -1,20 +1,32 @@
 import React,  { useState } from 'react';
 import ChatNavigator from './navigators/ChatNavigator';
 import AppLoading from 'expo-app-loading';
-import * as Font from 'expo-font';
 import { useFonts, Bungee_400Regular } from '@expo-google-fonts/bungee';
+import * as Google from 'expo-google-app-auth';
+import { 
+  Quicksand_300Light,
+  Quicksand_400Regular,
+  Quicksand_500Medium,
+  Quicksand_600SemiBold,
+  Quicksand_700Bold 
+} from '@expo-google-fonts/quicksand';
 
-// const fetchFonts = () => {
-//   Font.loadAsync({
-//     'bungee-regular': require('./assets/fonts/Bungee-Regular.ttf')
-//   });
-// };
+
+
+
+
 export default function App() {
 
   let [fontLoaded] = useFonts({
     Bungee_400Regular,
+    Quicksand_300Light,
+    Quicksand_400Regular,
+    Quicksand_500Medium,
+    Quicksand_600SemiBold,
+    Quicksand_700Bold 
+   
   });
-  // const [fontLoaded, setFontLoaded] = useState(false);
+ 
 
   if(!fontLoaded) {
     return(

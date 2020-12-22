@@ -29,13 +29,18 @@ const Main = props => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor:'#a8f0e6'
   },
   text: {
     marginTop: 50,
     padding: 25,
-    fontFamily: 'Bungee_400Regular',
-    fontSize: 30,
-    alignSelf: 'center'
+    fontFamily: 'Quicksand_400SemiBold',
+    fontSize: 40,
+    color: 'white',
+    alignSelf: 'center',
+    shadowRadius: 5,
+    shadowOffset: {width: 1, height: 2},
+    shadowOpacity: .5
   },
   buttonContainer: {
     flex: 1,
@@ -46,14 +51,15 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     borderWidth: 2,
+    borderColor:'white',
     borderRadius: 15,
     alignSelf: 'center',
     margin: 10,
     shadowOpacity: .25,
-    shadowOffset: {width:3, height: 3},
-    shadowRadius: 25,
+    shadowOffset: {width:2, height: 1},
+    shadowRadius: 10,
     justifyContent: 'flex-end',
-    backgroundColor: '#ccc'
+    backgroundColor: 'white'
   },
   buttonInner: {
     alignItems: 'center'

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, StyleSheet, TextInput } from 'react-native';
+import { Text, View, Button, StyleSheet, TextInput, ScrollView, KeyboardAvoidingView } from 'react-native';
 
 const Login = props => {
   return (

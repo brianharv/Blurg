@@ -1,5 +1,9 @@
 import firebase from 'firebase';
 
+class FirebaseSDK {
+  constructor() {
+    if (!firebase.apps.length) {
+      //avoid re-initializing
       firebase.initializeApp({
         apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
         authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -7,6 +11,22 @@ import firebase from 'firebase';
         storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
         messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
         appId: process.env.REACT_APP_FIREBASE_APP_ID 
-      })
+      });
+    }
+  }
+  login = async (user, success_callback, failed_callback) => {
+    await firebase
+      .auth()
+      .signInWithEmailAndPassword(user.email, user.password)
+      .then(success_callback, failed_callback);
+  };
+}
+const firebaseSDK = new FirebaseSDK();
+export default firebaseSDK;
+
+
+
+import firebase from 'firebase';
+
 
 
