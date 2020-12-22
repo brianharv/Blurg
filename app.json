@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "capstone-app",
-    "slug": "capstone-app",
+    "name": "Blurg",
+    "slug": "blurg",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "A messaging app that allows speakers of different languages to chat by harnessing the power of the Google Cloud Translate API."
   }
 }
