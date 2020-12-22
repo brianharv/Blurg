@@ -65,7 +65,7 @@ export default class Login extends React.Component {
           <TouchableOpacity
           style={styles.button} 
           onPress={() => {
-          props.navigation.navigate('Chat');
+          this.props.navigation.navigate('Name');
           }}
           >
           <Text style={styles.text}>Login</Text>
@@ -74,7 +74,7 @@ export default class Login extends React.Component {
           <TouchableOpacity
             style={styles.button} 
             onPress={() => {
-            props.navigation.navigate('Signup');
+            this.props.navigation.navigate('Signup');
             }}
             >
             <Text style={styles.text}>Signup</Text>
@@ -98,14 +98,12 @@ const styles = StyleSheet.create({
 		fontSize: offset
 	},
 	nameInput: {
-		height: offset * 2,
+    width: '90%',
 		margin: offset,
-    paddingHorizontal: offset,
     borderRadius: 10,
 		borderColor: '#111111',
     borderWidth: 2,
-    paddingVertical: 25,
-		fontSize: offset
+    padding: 15
 	},
 	buttonText: {
 		marginLeft: offset,

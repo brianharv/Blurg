@@ -8,19 +8,19 @@ const Main = props => {
     <View style={styles.screen}>
       <Text style={styles.text}>Welcome to Blurg</Text>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button}> 
-            <Button
-            color='black'
+          <TouchableOpacity style={styles.button}
             title="Login" onPress={() => 
             {props.navigation.navigate('Login')}}
-            />
+          >
+            <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Button
+          <TouchableOpacity 
+            style={styles.button}
             color='black'
             title="Start Talking" onPress={() => 
             {props.navigation.navigate('Name')}}
-            />
+            >
+            <Text style={styles.buttonText}>Start </Text>
           </TouchableOpacity>
         </View>  
     </View>
@@ -61,6 +61,12 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     justifyContent: 'flex-end',
     backgroundColor: "#168ec9"
+  },
+  buttonText: {
+    textAlign: 'center',
+    fontFamily: 'Bungee_400Regular',
+    fontSize: 26,
+    padding: 10
   }
 });
 

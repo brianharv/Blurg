@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import firebaseSDK from '../firebase';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class Signup extends React.Component {
 	state = {
@@ -58,11 +59,14 @@ export default class Signup extends React.Component {
 					onChangeText={this.onChangeTextName}
 					value={this.state.name}
 				/>
-				<Button
-					title="Signup"
-					style={styles.buttonText}
-					onPress={this.onPressCreate}
-				/>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={this.onPressCreate}
+          >
+            <Text style={styles.buttonText}>Signup</Text>
+          </TouchableOpacity>
+        </View>
 			</View>
 		);
 	}
@@ -82,18 +86,33 @@ const styles = StyleSheet.create({
 		fontSize: offset
 	},
 	nameInput: {
-		height: offset * 2,
+    width: '90%',
 		margin: offset,
-    paddingHorizontal: offset,
     borderRadius: 10,
 		borderColor: '#111111',
     borderWidth: 2,
-    paddingVertical: 25,
-		fontSize: offset
-	},
+    padding: 15
+
+  },
+  button: {
+    width: '70%',
+    flexDirection: 'row',
+    padding: 20,
+    borderWidth: 2,
+    borderColor:'black',
+    borderRadius: 15,
+    marginTop: 100,
+    shadowOpacity: .25,
+    shadowOffset: {width: 2, height: 10},
+    shadowRadius: 10,
+    backgroundColor: "#168ec9",
+  },
 	buttonText: {
-		marginLeft: offset,
-		fontSize: 42
-	}
+		fontFamily: 'Bungee_400Regular',
+    fontSize: 40,
+  },
+  buttonContainer: {
+    alignItems: 'center'
+  }
 });
 

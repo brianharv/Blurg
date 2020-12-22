@@ -19,7 +19,7 @@ const NameAndLanguage = props => {
 
   return (
     <View style={styles.screen}>
-      <Text style={styles.title}>Enter Your Name</Text>
+      {/* <Text style={styles.title}>Enter Your Name</Text>
       <View style={styles.inputContainer}>
         <TextInput 
           placeholder="enter your name"
@@ -27,7 +27,7 @@ const NameAndLanguage = props => {
           onChangeText={nameInputHandler}
           defaultValue={enteredName}
         />
-      </View>
+      </View> */}
       <Text style={styles.text}>Select the language you would like your text to be translated to.</Text>  
       <Picker
         style={styles.pickerContainer}

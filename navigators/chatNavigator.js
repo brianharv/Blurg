@@ -15,11 +15,12 @@ const defaultStackNavOptions = {
   headerTintColor: 'white',
   headerTitleStyle: {
     fontFamily: 'Bungee_400Regular',
+  
   }
 }
 
 const ChatNavigator = createStackNavigator({
-  Main: Main,
+  Blurg: Main,
   Name: NameAndLanguage,
   Chat: Chat,
   Login: Login,
