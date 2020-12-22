@@ -38,7 +38,7 @@ export default class Signup extends React.Component {
 
 	render() {
 		return (
-			<View>
+			<View style={styles.screen}>
 				<Text style={styles.title}>Email:</Text>
 				<TextInput
 					style={styles.nameInput}
@@ -70,7 +70,13 @@ export default class Signup extends React.Component {
 
 const offset = 16;
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: '#d3ebf5',
+  },
 	title: {
+    fontFamily: 'Bungee_400Regular',
+    fontSize: 40,
 		marginTop: offset,
 		marginLeft: offset,
 		fontSize: offset
@@ -81,7 +87,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: offset,
     borderRadius: 10,
 		borderColor: '#111111',
-		borderWidth: 1,
+    borderWidth: 2,
+    paddingVertical: 25,
 		fontSize: offset
 	},
 	buttonText: {

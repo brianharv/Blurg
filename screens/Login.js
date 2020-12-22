@@ -83,6 +83,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#d3ebf5',
   },
 	title: {
+    fontFamily: 'Bungee_400Regular',
+    fontSize: 40,
 		marginTop: 16,
 		marginLeft: 16,
 		fontSize: 16

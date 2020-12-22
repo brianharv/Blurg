@@ -10,14 +10,14 @@ const Main = props => {
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button}>
             <Button
-            style={styles.buttonInner}
+            color='black'
             title="Start Talking" onPress={() => 
             {props.navigation.navigate('Name')}}
             />
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}> 
             <Button
-            style={styles.buttonInner}
+            color='black'
             title="Login" onPress={() => 
             {props.navigation.navigate('Login')}}
             />
@@ -60,11 +60,7 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 2, height: 10},
     shadowRadius: 10,
     justifyContent: 'flex-end',
-    backgroundColor: 'white'
-  },
-  buttonInner: {
-    alignItems: 'center'
-    
+    backgroundColor: "#168ec9"
   }
 });
 
