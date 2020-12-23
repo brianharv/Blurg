@@ -1,7 +1,7 @@
 
 # _Blurg_
 
-#### _An IOS and Android compatible app that harnesses the power of the Google Cloud Translate API to allow users from across the language to text and chat, 12/22/20_
+#### _An IOS compatible app that harnesses the power of the Google Cloud Translate API to allow users from across the language to text and chat, 12/22/20_
 
 #### By _**Brian Harvey**_
 
@@ -47,6 +47,7 @@ npm run start
 * Transition animations
 * Ability to make friends and/or import contacts from user's IOS/Android Contact List.
 * Have proper networking.
+* Add Android compatibilty.
 
 
 ## Known Bugs
