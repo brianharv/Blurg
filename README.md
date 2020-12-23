@@ -53,6 +53,11 @@ npm run start
 
 _No known bugs_
 
+## Additional Repos 
+* [Capstone Research](https://github.com/brianharv/capstone_research_and_prep)
+* [Meals App Practice/Tutorial](https://github.com/brianharv/meals-app)
+* [Goals App Tutorial](https://github.com/brianharv/rn-complete-guide)
+
 ## Support and contact details
 
 _For any questions or feedback, feel free to [contact me](mailto:brian.harv3y@gmail.com)._
